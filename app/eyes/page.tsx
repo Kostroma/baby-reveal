@@ -6,7 +6,7 @@ export default function EyesPage(){
   const router=useRouter();
   const [selected,setSelected]=useState("Blue");
   const [tickets,setTickets]=useState(0);
-  const total=Number(localStorage.getItem("remainingTickets")||12);
+  const total = typeof window !== "undefined" ? Number(localStorage.getItem("remainingTickets") || 12) : 12;
   const remaining=total-tickets;
 
   return <main className="min-h-screen px-6 pb-28 flex flex-col items-center justify-center text-center">

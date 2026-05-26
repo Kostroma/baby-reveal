@@ -8,7 +8,7 @@ export default function DatePage(){
   const router = useRouter();
   const [index,setIndex]=useState(28);
   const [tickets,setTickets]=useState(0);
-  const total=Number(localStorage.getItem("remainingTickets")||12);
+  const total = typeof window !== "undefined" ? Number(localStorage.getItem("remainingTickets") || 12) : 12;
   const remaining=total-tickets;
   const selectedDate=dates[index];
 
