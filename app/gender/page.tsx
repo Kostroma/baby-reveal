@@ -6,7 +6,7 @@ export default function GenderPage() {
   const router = useRouter();
   const [selected, setSelected] = useState("girl");
   const [tickets, setTickets] = useState(0);
-  const total = Number(localStorage.getItem("remainingTickets") || 12);
+  const total = (typeof window !== "undefined" ? Number(localStorage.getItem("remainingTickets") || 12) : 12);
   const remaining = total - tickets;
 
   return (
