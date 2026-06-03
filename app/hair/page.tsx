@@ -17,7 +17,7 @@ export default function HairPage(){
       <TicketPicker tickets={tickets} setTickets={setTickets}/>
       <p className="text-2xl text-gray-500">Remaining: {remaining}</p>
     </div>
-    <BottomButton onClick={()=>{localStorage.setItem("hair",selected);localStorage.setItem("hairTickets",String(tickets));localStorage.setItem("remainingTickets",String(remaining));router.push("/done");}}>Finish</BottomButton>
+    <BottomButton onClick={()=>{localStorage.setItem("hair",selected);localStorage.setItem("hairTickets",String(tickets));localStorage.setItem("remainingTickets",String(remaining));router.push("/summary");}}>Finish</BottomButton>
   </main>
 }
 
