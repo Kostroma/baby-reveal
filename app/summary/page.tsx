@@ -42,7 +42,7 @@ export default function SummaryPage() {
     setError("");
 
     try {
-      const res = await fetch(process.env.NEXT_PUBLIC_GOOGLE_SCRIPT_URL!, {
+      const res = await fetch("/api/submit", {
         method: "POST",
         body: JSON.stringify(data),
       });
