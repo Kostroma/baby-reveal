@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { text, Lang } from "./lib/i18n";
+import { dict, Lang } from "./lib/i18n";
 
 export default function Home() {
   const router = useRouter();
@@ -11,7 +11,7 @@ export default function Home() {
   const [email, setEmail] = useState("");
   const [ticketValue, setTicketValue] = useState(0);
 
-  const t = text[lang];
+  const t = dict[lang];
   const totalEuro = 12 * ticketValue;
   const totalRub = totalEuro * 1200;
 

@@ -19,7 +19,7 @@ export default function DatePage(){
       <p className="text-gray-500 text-xl">EDD: 18 Nov 2026 ⭐</p>
       <input className="w-full" type="range" min="0" max={dates.length-1} value={index} onChange={e=>setIndex(+e.target.value)} />
       <p className="text-gray-500">21 Oct — 2 Dec</p>
-      <TicketPicker tickets={tickets} setTickets={setTickets}/>
+      <TicketPicker tickets={tickets} setTickets={setTickets} remaining={total}/>
       <p className="text-2xl text-gray-500">Remaining: {remaining}</p>
     </div>
     <BottomButton onClick={()=>{
@@ -31,5 +31,5 @@ export default function DatePage(){
   </main>
 }
 
-function TicketPicker({tickets,setTickets}:any){return <div><p className="mb-4 text-2xl">Tickets</p><div className="flex justify-center gap-3">{[0,1,2,3,4].map(n=><button key={n} onClick={()=>setTickets(n)} className={`w-14 h-14 border-2 rounded-xl text-xl ${tickets===n?"bg-black text-white":"bg-white"}`}>{n}</button>)}</div></div>}
+function TicketPicker({tickets,setTickets,remaining}:any){return <div><p className="mb-4 text-2xl">Tickets</p><div className="flex justify-center gap-3">{[0,1,2,3,4].map(n=><button key={n} disabled={n > remaining} onClick={()=>setTickets(n)} className={`w-14 h-14 border-2 rounded-xl text-xl ${tickets===n?"bg-black text-white":"bg-white"} ${n > remaining ? "opacity-30 cursor-not-allowed" : ""}`}>{n}</button>)}</div></div>}
 function BottomButton({children,onClick}:any){return <div className="fixed bottom-4 left-0 w-full px-6"><button onClick={onClick} className="w-full bg-black text-white py-4 rounded-2xl text-xl">{children}</button></div>}

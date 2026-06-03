@@ -12,7 +12,7 @@ export default function GenderPage() {
   return (
     <main className="min-h-screen px-6 pb-28 flex flex-col items-center justify-center text-center">
       <div className="max-w-md w-full space-y-8">
-        <h1 className="text-4xl font-bold">Boy or Girl?</h1>
+        <h1 className="text-4xl font-bold">Мальчик или девочка?</h1>
 
         <div className="flex gap-4 justify-center">
           {["boy","girl"].map(v => (
@@ -37,10 +37,10 @@ export default function GenderPage() {
   );
 }
 
-function TicketPicker({tickets,setTickets}:any){
+function TicketPicker({tickets,setTickets,remaining}:any){
   return <div><p className="mb-4 text-2xl">Tickets</p><div className="flex justify-center gap-3">
-    {[0,1,2,3,4].map(n=><button key={n} onClick={()=>setTickets(n)}
-    className={`w-14 h-14 border-2 rounded-xl text-xl ${tickets===n?"bg-black text-white":"bg-white"}`}>{n}</button>)}
+    {[0,1,2,3,4].map(n=><button key={n} disabled={n > remaining} onClick={()=>setTickets(n)}
+    className={`w-14 h-14 border-2 rounded-xl text-xl ${tickets===n?"bg-black text-white":"bg-white"} ${n > remaining ? "opacity-30 cursor-not-allowed" : ""}`}>{n}</button>)}
   </div></div>
 }
 
