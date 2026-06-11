@@ -61,6 +61,18 @@ export default function SummaryPage() {
     }
   }
 
+  const eyeLabels: Record<string, string> = {
+    Blue: t.eyeBlue,
+    Green: t.eyeGreen,
+    Hazel: t.eyeHazel,
+  };
+
+  const hairLabels: Record<string, string> = {
+    Blonde: t.hairBlonde,
+    Ginger: t.hairGinger,
+    Brown: t.hairBrown,
+  };
+
   if (!data) return null;
 
   return (
@@ -76,8 +88,8 @@ export default function SummaryPage() {
           <p><b>{t.labelDate}:</b> {data.birthDate} — {data.dateTickets} {t.ticketShort}</p>
           <p><b>{t.labelWeight}:</b> {data.weight} г — {data.weightTickets} {t.ticketShort}</p>
           <p><b>{t.labelTime}:</b> {data.time}:00 — {data.timeTickets} {t.ticketShort}</p>
-          <p><b>{t.labelEyes}:</b> {data.eyes} — {data.eyesTickets} {t.ticketShort}</p>
-          <p><b>{t.labelHair}:</b> {data.hair} — {data.hairTickets} {t.ticketShort}</p>
+          <p><b>{t.labelEyes}:</b> {eyeLabels[data.eyes] ?? data.eyes} — {data.eyesTickets} {t.ticketShort}</p>
+          <p><b>{t.labelHair}:</b> {hairLabels[data.hair] ?? data.hair} — {data.hairTickets} {t.ticketShort}</p>
           <p><b>{t.labelTotal}:</b> {data.totalEur}€ / {data.totalRub}₽</p>
         </div>
 
