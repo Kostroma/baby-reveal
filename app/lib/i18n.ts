@@ -166,6 +166,19 @@ export const dict = {
 
     finalThanks:
       "Спасибо, что стали частью этой маленькой семейной истории 🤍",
+
+    labelGender: "Пол",
+    labelDate: "Дата",
+    labelWeight: "Вес",
+    labelTime: "Время",
+    labelEyes: "Глаза",
+    labelHair: "Волосы",
+    labelTotal: "Итого",
+    ticketShort: "тик.",
+    perTicket: "за тикет",
+    submitError: "Не получилось отправить. Попробуй ещё раз.",
+    doneTitle: "Готово 🎉",
+    doneSub: "Ваши предсказания сохранены на этом устройстве.",
   },
 
   en: {
@@ -356,6 +369,19 @@ export const dict = {
 
     finalThanks:
       "Thank you for being part of this little family story 🤍",
+
+    labelGender: "Gender",
+    labelDate: "Date",
+    labelWeight: "Weight",
+    labelTime: "Time",
+    labelEyes: "Eyes",
+    labelHair: "Hair",
+    labelTotal: "Total",
+    ticketShort: "tkt.",
+    perTicket: "per ticket",
+    submitError: "Failed to submit. Please try again.",
+    doneTitle: "Done 🎉",
+    doneSub: "Your predictions are saved on this device.",
   },
 } as const;
 
