@@ -16,7 +16,7 @@ export default function SummaryPage() {
   useEffect(() => {
     const ticketValue = Number(localStorage.getItem("ticketValue") || 0);
     const totalEur = 12 * ticketValue;
-    const totalRub = totalEur * 1200;
+    const totalRub = totalEur * 50;
 
     setData({
       name: localStorage.getItem("playerName") || "",
@@ -98,7 +98,7 @@ export default function SummaryPage() {
           <p><b>{t.bet}:</b> {data.ticketValue}€ / {data.ticketValue * 1200}₽ {t.perTicket}</p>
           <p><b>{t.labelGender}:</b> {genderLabels[data.gender] ?? data.gender} — {data.genderTickets} {t.ticketShort}</p>
           <p><b>{t.labelDate}:</b> {formattedDate} — {data.dateTickets} {t.ticketShort}</p>
-          <p><b>{t.labelWeight}:</b> {data.weight} г — {data.weightTickets} {t.ticketShort}</p>
+          <p><b>{t.labelWeight}:</b> {data.weight} {t.grams} — {data.weightTickets} {t.ticketShort}</p>
           <p><b>{t.labelTime}:</b> {data.time}:00 — {data.timeTickets} {t.ticketShort}</p>
           <p><b>{t.labelEyes}:</b> {eyeLabels[data.eyes] ?? data.eyes} — {data.eyesTickets} {t.ticketShort}</p>
           <p><b>{t.labelHair}:</b> {hairLabels[data.hair] ?? data.hair} — {data.hairTickets} {t.ticketShort}</p>
