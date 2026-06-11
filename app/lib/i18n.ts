@@ -1,14 +1,15 @@
+
 export type Lang = "ru" | "en";
 
 export const dict = {
   ru: {
-    next:"Дальше", finish:"Завершить", tickets:"Тикеты", remaining:"Осталось",
-    startTitle:"Скоро появится малыш 👶",
+    next:"Дальше", finish:"Завершить", tickets:"Ставка", remaining:"Осталось жетонов",
+    startTitle:"Игра-предсказание для ожидающих малыша",
     startSub:"Сделай предсказания и попробуй выиграть.",
-    rules:"Ты выбираешь стоимость одного тикета. Все ставки считаются от неё. Чем выше ставка — тем больше возможный выигрыш. 50% банка получают будущие родители 💛",
-    min:"*100 р минимальная ставка для участия в призе",
+    rules:" У тебя будет 12 жетонов, выбранной стоимости. Все ставки считаются от неё. Чем выше ставка — тем больше возможный выигрыш. 50% банка получают будущие родители 💛",
+    min:"*600 р минимальная ставка для участия в призе",
     name:"Имя", email:"Email", start:"Начать",
-    gameRules:"У тебя есть 12 тикетов и 6 вопросов. Ты сам решаешь, сколько потратить на каждый вопрос.",
+    gameRules:"У тебя есть 12 жетонов и 6 вопросов. Ты сам решаешь, сколько потратить на каждый вопрос.",
     gotIt:"Все понял",
     gender:"Мальчик или девочка?", boy:"Мальчик", girl:"Девочка",
     date:"Когда родится малыш?", edd:"ПДР: 18 ноября 2026 ⭐",
@@ -19,10 +20,10 @@ export const dict = {
   },
   en: {
     next:"Next", finish:"Finish", tickets:"Tickets", remaining:"Remaining",
-    startTitle:"Tiny human is coming 👶",
+    startTitle:"Welcome to baby shower",
     startSub:"Make your predictions and try to win.",
-    rules:"You choose the value of one ticket. All bets are based on it. The higher your ticket value, the higher your possible prize. 50% of the pot goes to the future parents 💛",
-    min:"*100 RUB minimum to join the prize pool",
+    rules:"You choose the value of one ticket (12 total). All bets are based on it. The higher your ticket value, the higher your possible prize. 50% of the pot goes to the future parents 💛",
+    min:"*12 EUR minimum to join the prize pool",
     name:"Name", email:"Email", start:"Start",
     gameRules:"You have 12 tickets and 6 questions. You decide how many to spend on each question.",
     gotIt:"I understand",
@@ -39,3 +40,4 @@ export function getLang(): Lang {
   if (typeof window === "undefined") return "ru";
   return (localStorage.getItem("lang") as Lang) || "ru";
 }
+
