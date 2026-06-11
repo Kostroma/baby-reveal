@@ -13,7 +13,7 @@ export default function Home() {
 
   const t = dict[lang];
   const totalEuro = 12 * ticketValue;
-  const totalRub = totalEuro * 1200;
+  const totalRub = totalEuro * 50;
 
   return (
     <main className="min-h-screen flex items-center justify-center px-6 text-center">
@@ -59,3 +59,4 @@ export default function Home() {
     </main>
   );
 }
+
