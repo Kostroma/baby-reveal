@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { dict, getLang } from "@/lib/i18n";
+import { dict, getLang } from "../lib/i18n";
 
 export default function GenderPage() {
   const router = useRouter();
