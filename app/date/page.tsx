@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { dict, getLang } from "@/lib/i18n";
+import { dict, getLang } from "../lib/i18n";
 
 const dates = Array.from({ length: 43 }, (_, i) => {
   const d = new Date(2026, 9, 21);
