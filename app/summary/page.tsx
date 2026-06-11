@@ -61,6 +61,18 @@ export default function SummaryPage() {
     }
   }
 
+  const genderLabels: Record<string, string> = {
+    boy: t.boy,
+    girl: t.girl,
+  };
+
+  const formattedDate = data?.birthDate
+    ? new Date(data.birthDate).toLocaleDateString(
+        lang === "ru" ? "ru-RU" : "en-GB",
+        { day: "numeric", month: "short" }
+      )
+    : "";
+
   const eyeLabels: Record<string, string> = {
     Blue: t.eyeBlue,
     Green: t.eyeGreen,
@@ -84,8 +96,8 @@ export default function SummaryPage() {
           <p><b>{t.name}:</b> {data.name}</p>
           <p><b>{t.email}:</b> {data.email}</p>
           <p><b>{t.bet}:</b> {data.ticketValue}€ / {data.ticketValue * 1200}₽ {t.perTicket}</p>
-          <p><b>{t.labelGender}:</b> {data.gender} — {data.genderTickets} {t.ticketShort}</p>
-          <p><b>{t.labelDate}:</b> {data.birthDate} — {data.dateTickets} {t.ticketShort}</p>
+          <p><b>{t.labelGender}:</b> {genderLabels[data.gender] ?? data.gender} — {data.genderTickets} {t.ticketShort}</p>
+          <p><b>{t.labelDate}:</b> {formattedDate} — {data.dateTickets} {t.ticketShort}</p>
           <p><b>{t.labelWeight}:</b> {data.weight} г — {data.weightTickets} {t.ticketShort}</p>
           <p><b>{t.labelTime}:</b> {data.time}:00 — {data.timeTickets} {t.ticketShort}</p>
           <p><b>{t.labelEyes}:</b> {eyeLabels[data.eyes] ?? data.eyes} — {data.eyesTickets} {t.ticketShort}</p>
