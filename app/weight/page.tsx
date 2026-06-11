@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { dict, getLang } from "../lib/i18n";
 
+
 export default function WeightPage() {
   const router = useRouter();
 
@@ -28,7 +29,7 @@ export default function WeightPage() {
         </h1>
 
         <div className="text-5xl font-bold">
-          {weight} г
+          {weight} {t.grams}
         </div>
 
         <input

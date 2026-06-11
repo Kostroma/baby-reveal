@@ -95,7 +95,7 @@ export default function SummaryPage() {
         <div className="text-left rounded-2xl bg-gray-100 p-4 space-y-2 text-sm">
           <p><b>{t.name}:</b> {data.name}</p>
           <p><b>{t.email}:</b> {data.email}</p>
-          <p><b>{t.bet}:</b> {data.ticketValue}€ / {data.ticketValue * 1200}₽ {t.perTicket}</p>
+          <p><b>{t.bet}:</b> {data.ticketValue}€ / {data.ticketValue * 50}₽ {t.perTicket}</p>
           <p><b>{t.labelGender}:</b> {genderLabels[data.gender] ?? data.gender} — {data.genderTickets} {t.ticketShort}</p>
           <p><b>{t.labelDate}:</b> {formattedDate} — {data.dateTickets} {t.ticketShort}</p>
           <p><b>{t.labelWeight}:</b> {data.weight} {t.grams} — {data.weightTickets} {t.ticketShort}</p>
