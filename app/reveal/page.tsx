@@ -54,7 +54,7 @@ export default function RevealPage() {
         <div className="w-full aspect-[3/2] relative">
           {/* стартовый кадр (семья без аиста) */}
           <img
-            src="/reveal/page.png"
+            src="/reveal/family.png"
             alt="family"
             className={`absolute inset-0 w-full h-full object-contain transition-none ${
               phase === "idle" ? "opacity-100" : "opacity-0"
