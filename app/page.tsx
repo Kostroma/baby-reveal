@@ -16,8 +16,16 @@ export default function Home() {
   const totalRub = totalEuro * 50;
 
   return (
-    <main className="min-h-screen flex items-center justify-center px-6 text-center">
-      <div className="max-w-md w-full space-y-6">
+    <main className="min-h-screen flex items-center justify-center px-6 pb-40 text-center relative">
+      {/* декоративная картинка внизу */}
+      <img
+        src="/reveal/page.png"
+        alt=""
+        aria-hidden
+        className="pointer-events-none fixed bottom-0 left-0 right-0 w-full object-contain opacity-40 select-none"
+        style={{ maxHeight: "180px", objectPosition: "bottom" }}
+      />
+      <div className="max-w-md w-full space-y-6 relative z-10">
         <div className="flex justify-end gap-2">
           <button onClick={() => setLang("ru")} className={lang === "ru" ? "font-bold" : ""}>RU</button>
           <button onClick={() => setLang("en")} className={lang === "en" ? "font-bold" : ""}>EN</button>
@@ -59,4 +67,5 @@ export default function Home() {
     </main>
   );
 }
+
 
