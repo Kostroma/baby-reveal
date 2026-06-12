@@ -34,7 +34,7 @@ export default function DatePage() {
           {t.date}
         </h1>
 
-        <img src="/date.png" alt="" aria-hidden className="w-48 mx-auto pointer-events-none select-none" />
+        <img src="/date.png" alt="" aria-hidden fetchPriority="high" className="w-48 mx-auto pointer-events-none select-none" />
 
         <div className="text-5xl font-bold">
           {selectedDate.toLocaleDateString(
