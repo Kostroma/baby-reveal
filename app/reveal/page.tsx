@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { dict, getLang, Lang } from "../lib/i18n";
 
-const SEQUENCE = [1, 2, 3, 1, 2, 3, 4, 5, 6, 6, 7];
+const SEQUENCE = [1, 2, 3, 1, 2, 3, 4, 5, 6, 7];
 const FRAME_MS = 500;
 const ALL_FRAMES = [1, 2, 3, 4, 5, 6, 7];
 
@@ -17,6 +17,11 @@ export default function RevealPage() {
   const t = dict[lang];
 
   function startAnimation() {
+    // принудительно декодируем все кадры перед стартом
+    ALL_FRAMES.forEach((n) => {
+      const img = new Image();
+      img.src = `/reveal/reveal-${n}.png`;
+    });
     setPhase("animating");
     setFrameIndex(0);
   }
