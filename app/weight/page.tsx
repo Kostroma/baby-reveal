@@ -28,6 +28,8 @@ export default function WeightPage() {
           {t.weight}
         </h1>
 
+        <img src="/weight.png" alt="" aria-hidden className="w-48 mx-auto pointer-events-none select-none" />
+
         <div className="text-5xl font-bold">
           {weight} {t.grams}
         </div>

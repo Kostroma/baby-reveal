@@ -27,6 +27,8 @@ export default function TimePage() {
           {t.time}
         </h1>
 
+        <img src="/time.png" alt="" aria-hidden className="w-48 mx-auto pointer-events-none select-none" />
+
         <div className="text-5xl font-bold">
           {String(hour).padStart(2, "0")}:00
         </div>

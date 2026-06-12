@@ -30,6 +30,8 @@ export default function EyesPage() {
       <div className="max-w-md w-full space-y-8">
         <h1 className="text-4xl font-bold">{t.eyes}</h1>
 
+        <img src="/eyes.png" alt="" aria-hidden className="w-48 mx-auto pointer-events-none select-none" />
+
         <Choice options={options} selected={selected} setSelected={setSelected} />
 
         <TicketPicker

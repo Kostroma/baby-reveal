@@ -34,6 +34,8 @@ export default function DatePage() {
           {t.date}
         </h1>
 
+        <img src="/date.png" alt="" aria-hidden className="w-48 mx-auto pointer-events-none select-none" />
+
         <div className="text-5xl font-bold">
           {selectedDate.toLocaleDateString(
             lang === "ru" ? "ru-RU" : "en-GB",
