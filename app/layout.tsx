@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { Frame } from "./components/Frame";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -28,14 +29,7 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-        {/* декоративная рамка — фиксированная, под контентом */}
-        <img
-          src="/frame.png"
-          alt=""
-          aria-hidden
-          className="fixed inset-0 w-full h-full pointer-events-none select-none z-0"
-          style={{ objectFit: "fill" }}
-        />
+        <Frame />
         {/* контент поверх рамки */}
         <div className="relative z-10 flex flex-col min-h-full">
           {children}

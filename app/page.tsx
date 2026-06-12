@@ -32,6 +32,19 @@ export default function Home() {
           className="w-full pointer-events-none select-none"
         />
 
+        {/* иконки вопросов */}
+        <div className="flex justify-center gap-3">
+          {["date", "time", "weight", "eyes"].map((name) => (
+            <img
+              key={name}
+              src={`/${name}.png`}
+              alt=""
+              aria-hidden
+              className="w-16 h-16 object-contain pointer-events-none select-none"
+            />
+          ))}
+        </div>
+
         <p className="text-gray-500 text-sm">{t.startSub}</p>
         <p className="rounded-2xl bg-yellow-50 p-3 text-xs leading-5">{t.rules}</p>
 
@@ -63,6 +76,26 @@ export default function Home() {
         >
           {t.start}
         </button>
+
+        {/* ссылки оплаты */}
+        <div className="flex gap-3">
+          <a
+            href="https://revolut.me/alexostanin"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex-1 rounded-2xl border-2 border-black py-3 text-sm font-medium text-center"
+          >
+            💳 Revolut (€)
+          </a>
+          <a
+            href="https://www.tinkoff.ru/rm/r_VmnfQiijZR.TRWtJzECiR/PJRpI6816"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex-1 rounded-2xl border-2 border-black py-3 text-sm font-medium text-center"
+          >
+            💳 Тинькофф (₽)
+          </a>
+        </div>
       </div>
     </main>
   );
