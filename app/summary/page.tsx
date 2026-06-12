@@ -14,6 +14,11 @@ export default function SummaryPage() {
   const t = dict[lang];
 
   useEffect(() => {
+    if (localStorage.getItem("submitted") === "true") {
+      router.replace("/reveal");
+      return;
+    }
+
     const ticketValue = Number(localStorage.getItem("ticketValue") || 0);
     const totalEur = 12 * ticketValue;
     const totalRub = totalEur * 50;
@@ -104,6 +109,12 @@ export default function SummaryPage() {
           <p><b>{t.labelHair}:</b> {hairLabels[data.hair] ?? data.hair} — {data.hairTickets} {t.ticketShort}</p>
           <p><b>{t.labelTotal}:</b> {data.totalEur}€ / {data.totalRub}₽</p>
         </div>
+
+        <p className="text-xs text-gray-400">
+          {lang === "ru"
+            ? "Отправить ответы можно только один раз с этого устройства — вернуться и изменить не получится."
+            : "You can only submit once from this device — you won't be able to go back and change your answers."}
+        </p>
 
         {error && <p className="text-red-500">{error}</p>}
 

@@ -51,7 +51,7 @@ export default function Home() {
 
         <button
           onClick={() => {
-            // if (!name || !email || !ticketValue) return;
+            if (!name || !email || !ticketValue) return;
             localStorage.setItem("lang", lang);
             localStorage.setItem("playerName", name);
             localStorage.setItem("playerEmail", email);
