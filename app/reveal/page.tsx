@@ -53,8 +53,8 @@ export default function RevealPage() {
         <div className="space-y-3">
           <h1 className="text-3xl font-bold">{t.accepted}</h1>
           <p className="text-gray-500">{t.thanks}</p>
-          <p className="text-sm text-gray-400">{t.finalTitle}</p>
-          <p className="text-sm text-gray-400">{t.finalEmail}</p>
+          <p className="text-sm text-gray-600 font-medium">{t.finalTitle}</p>
+          <p className="text-sm text-gray-500">{t.finalEmail}</p>
         </div>
 
         {/* контейнер картинки — все кадры предзагружены, видим только нужный */}
