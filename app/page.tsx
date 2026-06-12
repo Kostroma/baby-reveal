@@ -32,20 +32,7 @@ export default function Home() {
           className="w-full pointer-events-none select-none"
         />
 
-        {/* иконки вопросов */}
-        <div className="flex justify-center gap-3">
-          {["date", "time", "weight", "eyes"].map((name) => (
-            <img
-              key={name}
-              src={`/${name}.png`}
-              alt=""
-              aria-hidden
-              className="w-16 h-16 object-contain pointer-events-none select-none"
-            />
-          ))}
-        </div>
-
-        <p className="text-gray-500 text-sm">{t.startSub}</p>
+<p className="text-gray-500 text-sm">{t.startSub}</p>
         <p className="rounded-2xl bg-yellow-50 p-3 text-xs leading-5">{t.rules}</p>
 
         <input placeholder={t.name} value={name} onChange={(e) => setName(e.target.value)} className="w-full rounded-xl border p-2.5 text-sm" />
