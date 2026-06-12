@@ -180,6 +180,7 @@ export const dict = {
     submitError: "Не получилось отправить. Попробуй ещё раз.",
     doneTitle: "Готово 🎉",
     doneSub: "Ваши предсказания сохранены на этом устройстве.",
+    revealButton: "Узнать пол",
   },
 
   en: {
@@ -384,6 +385,7 @@ export const dict = {
     submitError: "Failed to submit. Please try again.",
     doneTitle: "Done 🎉",
     doneSub: "Your predictions are saved on this device.",
+    revealButton: "Find out",
   },
 } as const;
 
