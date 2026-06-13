@@ -9,10 +9,10 @@ export default function Home() {
   const [lang, setLang] = useState<Lang>("ru");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [ticketValue, setTicketValue] = useState(0);
+  const [ticketValue, setTicketValue] = useState<number | null>(null);
 
   const t = dict[lang];
-  const totalEuro = 12 * ticketValue;
+  const totalEuro = 12 * (ticketValue ?? 0);
   const totalRub = totalEuro * 50;
 
   return (
@@ -51,11 +51,11 @@ export default function Home() {
 
         <button
           onClick={() => {
-            if (!name || !email || !ticketValue) return;
+            if (!name || !email || ticketValue === null) return;
             localStorage.setItem("lang", lang);
             localStorage.setItem("playerName", name);
             localStorage.setItem("playerEmail", email);
-            localStorage.setItem("ticketValue", String(ticketValue));
+            localStorage.setItem("ticketValue", String(ticketValue ?? 0));
             localStorage.setItem("remainingTickets", "12");
             router.push("/gender");
           }}
