@@ -14,7 +14,7 @@ export default function SummaryPage() {
   const t = dict[lang];
 
   useEffect(() => {
-    if (localStorage.getItem("submitted") === "true") {
+    if (localStorage.getItem("submitted_v2") === "true") {
       router.replace("/reveal");
       return;
     }
@@ -58,7 +58,7 @@ export default function SummaryPage() {
 
       if (!res.ok) throw new Error("Submit failed");
 
-      localStorage.setItem("submitted", "true");
+      localStorage.setItem("submitted_v2", "true");
       router.push("/reveal");
     } catch {
       setError(t.submitError);
