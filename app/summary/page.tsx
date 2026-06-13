@@ -15,7 +15,7 @@ export default function SummaryPage() {
 
   useEffect(() => {
     if (localStorage.getItem("submitted_v2") === "true") {
-      router.replace("/reveal");
+      router.replace("/already");
       return;
     }
 
