@@ -2,7 +2,8 @@ export async function POST(req: Request) {
   try {
     const data = await req.json();
 
-    const res = await fetch(process.env.GOOGLE_SCRIPT_URL!, {
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxGTxBnjoGkdMi2Qozi8qucTuRh5oK6RBMghNSrQHPedcgMiU4Skefy9rrJEsTxl-c/exec";
+    const res = await fetch(SCRIPT_URL, {
       method: "POST",
       body: JSON.stringify(data),
       headers: { "Content-Type": "text/plain;charset=utf-8" },
